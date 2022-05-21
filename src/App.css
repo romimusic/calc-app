@@ -18,16 +18,19 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
+  width: 95%;
+  max-width: 500px;
   margin: 40px auto;
   color: #FFFFFF;
   background-color: #292f36;
   box-shadow: 0 19px 38px rgba(19,19,19, 0.5);
+  border-radius: 22px;
 }
 
 .title{
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   padding: 15px;
+  margin-top: 28px;
 }
 
 .result {
@@ -50,38 +53,29 @@ html {
   width: 80%;
 }
 
-/* .numbers {
+.numbers {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   width: 100%;
-} */
+}
 
 .numbers .number {
   width: 33%;
   padding: 20px;
   color: #417fe5;
   border: none;
-  border-bottom: 2px solid #ffffff1f;
-  border-right: 2px solid #ffffff1f;
+  border: 1px solid #ffffff0d;
+  /* border-right: 2px solid #ffffff1f; */
   background: none;
 }
 
-.numbers .number:hover {
-  color: #00a98f;
-  cursor: pointer;
+.numbers .number:last-child {
+  margin: 0 auto;
+  border: 1px solid #ffffff0d;
 }
 
-.numbers .cero {
-  width: 100%;
-  padding: 20px;
-  color: #417fe5;
-  border: none;
-  border-right: 2px solid #ffffff1f;
-  background: none;
-  border-bottom: 2px solid #ffffff1f;
-}
-
-.numbers .cero:hover {
+.numbers .number:hover,
+.numbers .lastBox:hover {
   color: #00a98f;
   cursor: pointer;
 }
@@ -96,28 +90,35 @@ html {
   width: 100%;
   padding: 20px;
   color: #00a98f;
-  border: none;
-  border-bottom: 2px solid #ffffff1f;
+  border: 1px solid #ffffff0d;
   background: none;
 }
 
 .operations__container .opeartions:hover, 
-.operations__container .lastBox:hover, 
-.numbers .lastBox:hover {
+.operations__container .lastBox:hover {
   color: #417fe5;
   cursor: pointer;
 }
 
-.operations__container .lastBox,
-.numbers .lastBox {
+.operations__container .lastBox {
   width: 100%;
   padding: 20px;
   color: #00a98f;
   border: none;
-  border-left: 2px solid #ffffff1f;
+  border: 1px solid #ffffff0d;
   background: none;
 }
 
+.numbers .lastBox { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 20px;
+  border: 1px solid #ffffff0d;
+  color: #417fe5;
+  background: none;
+}
 /* .operations__container .lastBox {
   border-bottom: none;
 }

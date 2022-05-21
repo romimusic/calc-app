@@ -1,9 +1,9 @@
 /* eslint no-eval: 0 */
 import React, {useState} from 'react'
-import Result from './Componets/Result'
-import MathOperations from './Componets/MathOperations'
-import SpecialsFunctions  from './Componets/SpecialsFunctions'
-import Number from './Componets/Number'
+import Result from './componets/Result'
+import MathOperations from './componets/MathOperations'
+import SpecialsFunctions  from './componets/SpecialsFunctions'
+import Number from './componets/Number'
 import './App.css'
 import { words } from 'lodash'
 
@@ -18,7 +18,7 @@ const App=() => {
   const items= words(result, /[^-^+^*^/]+/g)
 
   const value = items.length > 0 ? items[items.length - 1] : 0;
-  console.log("rendering the app" , value);
+  
   return (
     <main className="container">
       <h1 className="title"> Calculator </h1>
@@ -26,15 +26,12 @@ const App=() => {
       <div className="calc_container">
         <div className="values_container">
             <Number onClickNumber={ number => {
-              console.log("number ", number)
               setResult(`${result}${number}`)}
               } />
             <SpecialsFunctions onClear={clear => {
-              console.log("clear ", clear);
               setResult('');}
             } onDeleted={deleted => {
             if (result.length > 0 ) {
-              console.log("Delete" , deleted);
               const newResult= result.substring(0, result.length - 1) 
               setResult(newResult)
             }
@@ -43,11 +40,9 @@ const App=() => {
         
         <MathOperations 
           onClickOperations= {operation => {
-            console.log("operation: ", operation);
             setResult(`${result}${operation}`)}
           } 
           onClickEqual= {equal => {
-            console.log("equal", equal)
             setResult(eval(result).toString())}
           } />
       </div>
